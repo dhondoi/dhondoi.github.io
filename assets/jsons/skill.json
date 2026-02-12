@@ -1,22 +1,22 @@
 [
     {
         "name": "Java",
-        "score": "60"
+        "score": "100"
     },
     {
         "name": "MySQL",
-        "score": "60"
+        "score": "100"
     },
     {
         "name": "PHP",
-        "score": "30"
+        "score": "100"
     },
     {
         "name": "JavaScript",
-        "score": "30"
+        "score": "100"
     },
     {
         "name": "HTML",
-        "score": "30"
+        "score": "100"
     }
 ]
