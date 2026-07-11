@@ -2,28 +2,19 @@
     {
         "title": "Java Library Kriptografi",
         "link": "https://github.com/dhondoi/Java-Library-Kriptografi",
-        "image": "kriptografi",
         "category": "Programming",
-        "date": "2023-11-11",
-        "date_show": "11 November 2023",
-        "description": "Kriptografi bisa pula diartikan sebagai suatu ilmu atau seni menjaga keamanan pesan."
+        "desc": "Kriptografi bisa pula diartikan sebagai suatu ilmu atau seni menjaga keamanan pesan."
     },
     {
         "title": "Java Constructor Overloading",
         "link": "https://github.com/dhondoi/Java-Library-Cerita-Constructor-Overloading",
-        "image": "constructor-overloading",
         "category": "Programming",
-        "date": "2023-11-27",
-        "date_show": "27 November 2023",
-        "description": "Menjelaskan konsep constructor overloading pada bahasa pemrograman Java menggunakan cerita dengan harapan memudahkan para pembaca khususnya para programmer menyerap dengan mudah konsep ini."
+        "desc": "Menjelaskan konsep constructor overloading pada bahasa pemrograman Java menggunakan cerita dengan harapan memudahkan para pembaca khususnya para programmer menyerap dengan mudah konsep ini."
     },
     {
         "title": "Android Volley Menghubungkan API",
         "link": "https://github.com/dhondoi/Java-Android-Prototipe-Menghubungkan-API",
-        "image": "android-volley",
         "category": "Programming",
-        "date": "2024-01-03",
-        "date_show": "03 Januari 2024",
-        "description": "Menghubungkan java android menggunakan library volley ke database melewati PHP. Database dan PHP menggunakan tools XAMPP untuk memudahkan. Tujuan dari Pembahasan kali ini adalah keberhasilan dalam mengambil data sehingga menjadi informasi yang diperlukan."
+        "desc": "Menghubungkan java android menggunakan library volley ke database melewati PHP. Database dan PHP menggunakan tools XAMPP untuk memudahkan. Tujuan dari Pembahasan kali ini adalah keberhasilan dalam mengambil data sehingga menjadi informasi yang diperlukan."
     }
 ]

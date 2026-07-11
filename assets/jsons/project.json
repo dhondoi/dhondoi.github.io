@@ -3,18 +3,18 @@
         "title": "Aplikasi Penjualan Toko Nona Seblak",
         "link": "https://github.com/dhondoi/Java-Android-Aplikasi-Penjualan-Produk-Toko-Nona-Seblak",
         "image": "nona-seblak",
-        "category": "Android"
+        "desc": "Aplikasi berbasis Android yang untuk pembuatan laporan pemasukan di Toko Nona Seblak"
     },
     {
         "title": "Aplikasi Penggajian Karyawan",
         "link": "https://github.com/dhondoi/Java-Desktop-Aplikasi-Penggajian-Karyawan",
         "image": "gaji-karyawan",
-        "category": "Desktop"
+        "desc": "Aplikasi ini adalah membuat laporan gaji tiap karyawan. Sebelum Laporan gaji karyawan dihasilkan, diperlukan beberapa proses bisnis."
     },
     {
         "title": "Aplikasi Keuangan Sederhana",
         "link": "https://github.com/dhondoi/Java-Desktop-Aplikasi-Keuangan-Sederhana",
         "image": "keuangan",
-        "category": "Desktop"
+        "desc": "Aplikasi ini adalah membuat laporan pemasukan dan pengeluaran keuangan pada bisnis penjualan produk."
     }
 ]
