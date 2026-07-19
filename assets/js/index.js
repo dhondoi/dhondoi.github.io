@@ -13,13 +13,13 @@ import { renderingProjects } from "./projects.js";
   };
 
   // Memuat semua seksi saat halaman dimuat
-  document.addEventListener("DOMContentLoaded", () => {
-    loadSection("navbar", "navbar.html");
-    loadSection("hero", "hero.html");
-    loadSection("about", "about.html");
-    loadSection("projects", "projects.html");
-    loadSection("blogs", "blogs.html");
-    loadSection("contact", "contact.html");
+  document.addEventListener("DOMContentLoaded", async () => {
+    await loadSection("navbar", "navbar.html");
+    await loadSection("hero", "hero.html");
+    await loadSection("about", "about.html");
+    await loadSection("projects", "projects.html");
+    await loadSection("blogs", "blogs.html");
+    await loadSection("contact", "contact.html");
 
     renderingProjects();
     renderingBlogs();
