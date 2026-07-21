@@ -1,20 +1,26 @@
 [
-    {
-        "title": "Java Library Kriptografi",
-        "link": "https://github.com/dhondoi/Java-Library-Kriptografi",
-        "category": "Programming",
-        "desc": "Kriptografi bisa pula diartikan sebagai suatu ilmu atau seni menjaga keamanan pesan."
-    },
-    {
-        "title": "Java Constructor Overloading",
-        "link": "https://github.com/dhondoi/Java-Library-Cerita-Constructor-Overloading",
-        "category": "Programming",
-        "desc": "Menjelaskan konsep constructor overloading pada bahasa pemrograman Java menggunakan cerita dengan harapan memudahkan para pembaca khususnya para programmer menyerap dengan mudah konsep ini."
-    },
-    {
-        "title": "Android Volley Menghubungkan API",
-        "link": "https://github.com/dhondoi/Java-Android-Prototipe-Menghubungkan-API",
-        "category": "Programming",
-        "desc": "Menghubungkan java android menggunakan library volley ke database melewati PHP. Database dan PHP menggunakan tools XAMPP untuk memudahkan. Tujuan dari Pembahasan kali ini adalah keberhasilan dalam mengambil data sehingga menjadi informasi yang diperlukan."
-    }
+  {
+    "title": "Java Library Kriptografi",
+    "link": "https://github.com/dhondoi/Java-Library-Kriptografi",
+    "category": "Programming",
+    "desc": "Kriptografi bisa pula diartikan sebagai suatu ilmu atau seni menjaga keamanan pesan.",
+    "badgeClass": "bg-primary",
+    "btnClass": "btn-outline-primary"
+  },
+  {
+    "title": "Java Constructor Overloading",
+    "link": "https://github.com/dhondoi/Java-Library-Cerita-Constructor-Overloading",
+    "category": "Programming",
+    "desc": "Menjelaskan konsep constructor overloading pada bahasa pemrograman Java menggunakan cerita dengan harapan memudahkan para pembaca khususnya para programmer menyerap dengan mudah konsep ini.",
+    "badgeClass": "bg-success",
+    "btnClass": "btn-outline-success"
+  },
+  {
+    "title": "Android Volley Menghubungkan API",
+    "link": "https://github.com/dhondoi/Java-Android-Prototipe-Menghubungkan-API",
+    "category": "Programming",
+    "desc": "Menghubungkan java android menggunakan library volley ke database melewati PHP. Database dan PHP menggunakan tools XAMPP untuk memudahkan. Tujuan dari Pembahasan kali ini adalah keberhasilan dalam mengambil data sehingga menjadi informasi yang diperlukan.",
+    "badgeClass": "bg-warning",
+    "btnClass": "btn-outline-warning"
+  }
 ]

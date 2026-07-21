@@ -1,20 +1,32 @@
 [
-    {
-        "title": "Aplikasi Penjualan Toko Nona Seblak",
-        "link": "https://github.com/dhondoi/Java-Android-Aplikasi-Penjualan-Produk-Toko-Nona-Seblak",
-        "image": "nona-seblak",
-        "desc": "Aplikasi berbasis Android yang untuk pembuatan laporan pemasukan di Toko Nona Seblak"
-    },
-    {
-        "title": "Aplikasi Penggajian Karyawan",
-        "link": "https://github.com/dhondoi/Java-Desktop-Aplikasi-Penggajian-Karyawan",
-        "image": "gaji-karyawan",
-        "desc": "Aplikasi ini adalah membuat laporan gaji tiap karyawan. Sebelum Laporan gaji karyawan dihasilkan, diperlukan beberapa proses bisnis."
-    },
-    {
-        "title": "Aplikasi Keuangan Sederhana",
-        "link": "https://github.com/dhondoi/Java-Desktop-Aplikasi-Keuangan-Sederhana",
-        "image": "keuangan",
-        "desc": "Aplikasi ini adalah membuat laporan pemasukan dan pengeluaran keuangan pada bisnis penjualan produk."
-    }
+  {
+    "title": "Aplikasi FrontEnd Management Contact UMKM",
+    "link": "https://contactumkm.dhondoi.online",
+    "image": "contact-umkm",
+    "desc": "Aplikasi FrontEnd untuk management contact UMKM."
+  },
+  {
+    "title": "My Personal Profile",
+    "link": "https://dhondoi.online",
+    "image": "dhondoi-online",
+    "desc": "Personal website Doni Firmansyah yang direncanakan untuk showcase hasil project"
+  },
+  {
+    "title": "Aplikasi Penjualan Toko Nona Seblak",
+    "link": "https://github.com/dhondoi/Java-Android-Aplikasi-Penjualan-Produk-Toko-Nona-Seblak",
+    "image": "nona-seblak",
+    "desc": "Aplikasi berbasis Android yang untuk pembuatan laporan pemasukan di Toko Nona Seblak"
+  },
+  {
+    "title": "Aplikasi Penggajian Karyawan",
+    "link": "https://github.com/dhondoi/Java-Desktop-Aplikasi-Penggajian-Karyawan",
+    "image": "gaji-karyawan",
+    "desc": "Aplikasi ini adalah membuat laporan gaji tiap karyawan. Sebelum Laporan gaji karyawan dihasilkan, diperlukan beberapa proses bisnis."
+  },
+  {
+    "title": "Aplikasi Keuangan Sederhana",
+    "link": "https://github.com/dhondoi/Java-Desktop-Aplikasi-Keuangan-Sederhana",
+    "image": "keuangan",
+    "desc": "Aplikasi ini adalah membuat laporan pemasukan dan pengeluaran keuangan pada bisnis penjualan produk."
+  }
 ]

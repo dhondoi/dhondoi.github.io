@@ -1,65 +1,116 @@
-// Fungsi untuk membuat kartu blog/proyek berdasarkan data objek baru
-const creatingCardBlog = (blog, indexBadgeBtnColor) => {
-  const colorPicks = [
-    { badge: "bg-primary", btn: "btn-outline-primary" },
-    { badge: "bg-success", btn: "btn-outline-success" },
-    { badge: "bg-warning", btn: "btn-outline-warning" },
-  ];
-  // 1. Membuat elemen kolom paling luar (<div class="col">)
-  const col = document.createElement("div");
-  col.className = "col";
+"use strict";
 
-  // 2. Membuat elemen card (<div class="card h-100 border-0 shadow-sm hover-shadow transition">)
-  const card = document.createElement("div");
-  card.className = "card h-100 border-0 shadow-sm hover-shadow transition";
+// Fungsi Pembantu: Mengubah Array menjadi potongan-potongan (Chunking)
+function chunkArray(array, size) {
+  const result = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+}
 
-  // 3. Membuat elemen body (<div class="card-body">)
-  const cardBody = document.createElement("div");
-  cardBody.className = "card-body";
+// Fungsi Template Kartu Blog HTML
+function createBlogCardHTML(blog) {
+  return `
+    <div class="card h-100 border-0 shadow-sm hover-shadow transition">
+      <div class="card-body">
+        <h5 class="card-title">${blog.title}</h5>
+        <span class="badge ${blog.badgeClass} mb-2">${blog.category}</span>
+        <p class="card-text text-muted">${blog.desc}</p>
+      </div>
+      <div class="card-footer bg-white border-0 pt-0 pb-3">
+        <a href="${blog.link}" target="_blank" class="btn ${blog.btnClass} w-100">Selengkapnya</a>
+      </div>
+    </div>
+  `;
+}
 
-  // 4. Membuat elemen badge (<span class="badge bg-primary mb-2">)
-  const badge = document.createElement("span");
-  badge.className = `badge ${colorPicks[indexBadgeBtnColor].badge} mb-2`;
-  badge.textContent = blog.category; // Mengambil blog kategori (misal: Data Science)
+// 1. Render Slider Desktop Blog (3 Kartu per Slide)
+function renderDesktopBlogSlider(blogsData) {
+  const container = document.getElementById("desktop-blog-container");
+  if (!container) return;
 
-  // 5. Membuat judul (<h5 class="card-title">)
-  const cardTitle = document.createElement("h5");
-  cardTitle.className = "card-title";
-  cardTitle.textContent = blog.title;
+  const chunks = chunkArray(blogsData, 3);
 
-  // 6. Membuat deskripsi (<p class="card-text text-muted">)
-  const cardText = document.createElement("p");
-  cardText.className = "card-text text-muted";
-  cardText.textContent = blog.desc;
+  let slidesHTML = chunks
+    .map((chunk, index) => {
+      const cardsHTML = chunk
+        .map(
+          (blog) => `
+          <div class="col-lg-4">
+            ${createBlogCardHTML(blog)}
+          </div>
+        `,
+        )
+        .join("");
 
-  // Menyusun elemen di dalam card-body (Urutan: badge -> judul -> deskripsi)
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(badge);
-  cardBody.appendChild(cardText);
+      return `
+        <div class="carousel-item ${index === 0 ? "active" : ""}" data-bs-interval="3000">
+          <div class="row g-4">
+            ${cardsHTML}
+          </div>
+        </div>
+      `;
+    })
+    .join("");
 
-  // 7. Membuat elemen footer (<div class="card-footer bg-white border-0 pt-0 pb-3">)
-  const cardFooter = document.createElement("div");
-  cardFooter.className = "card-footer bg-white border-0 pt-0 pb-3";
+  container.innerHTML = `
+    <div id="blogSliderDesktop" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        ${slidesHTML}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#blogSliderDesktop" data-bs-slide="prev" style="width: 5%; left: -5%;">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#blogSliderDesktop" data-bs-slide="next" style="width: 5%; right: -5%;">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+      </button>
+    </div>
+  `;
+}
 
-  // 8. Membuat tombol tautan (<a class="btn btn-outline-primary w-100">)
-  const btn = document.createElement("a");
-  btn.setAttribute("href", blog.link);
-  btn.setAttribute("target", "_blank");
-  btn.className = `btn ${colorPicks[indexBadgeBtnColor].btn} w-100`;
-  btn.textContent = "Selengkapnya";
+// 2. Render Slider Mobile Blog (1 Kartu per Slide)
+function renderMobileBlogSlider(blogsData) {
+  const container = document.getElementById("mobile-blog-container");
+  if (!container) return;
 
-  // Memasukkan tombol ke dalam card-footer
-  cardFooter.appendChild(btn);
+  let indicatorsHTML = blogsData
+    .map(
+      (_, index) => `
+      <button type="button" data-bs-target="#blogSliderMobile" data-bs-slide-to="${index}" class="${index === 0 ? "active" : ""} bg-dark" aria-label="Slide ${index + 1}"></button>
+    `,
+    )
+    .join("");
 
-  // 9. Menyusun struktur utama: masukkan body dan footer ke dalam card
-  card.appendChild(cardBody);
-  card.appendChild(cardFooter);
+  let slidesHTML = blogsData
+    .map(
+      (blog, index) => `
+      <div class="carousel-item ${index === 0 ? "active" : ""}" data-bs-interval="3000">
+        <div class="mx-auto" style="max-width: 350px;">
+          ${createBlogCardHTML(blog)}
+        </div>
+      </div>
+    `,
+    )
+    .join("");
 
-  // 10. Masukkan card ke dalam kolom pembungkus
-  col.appendChild(card);
-
-  return col;
-};
+  container.innerHTML = `
+    <div id="blogSliderMobile" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators mb-0" style="bottom: -40px;">
+        ${indicatorsHTML}
+      </div>
+      <div class="carousel-inner pb-4">
+        ${slidesHTML}
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#blogSliderMobile" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#blogSliderMobile" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+      </button>
+    </div>
+  `;
+}
 
 export const renderingBlogs = function () {
   fetch("assets/jsons/blog.json")
@@ -68,13 +119,26 @@ export const renderingBlogs = function () {
       return response.json();
     })
     .then(function (blogs) {
-      const rowContainer = document.getElementById("blog-row");
-      let index = 0;
-      blogs.forEach(function (blog) {
-        const cardBlog = creatingCardBlog(blog, index % 3);
-        index += 1;
-        rowContainer.appendChild(cardBlog);
-      });
+      renderDesktopBlogSlider(blogs);
+      renderMobileBlogSlider(blogs);
+
+      // Inisialisasi ulang Bootstrap Carousel secara manual
+      const desktopElement = document.getElementById("blogSliderDesktop");
+      const mobileElement = document.getElementById("blogSliderMobile");
+
+      if (desktopElement) {
+        new bootstrap.Carousel(desktopElement, {
+          interval: 3000,
+          ride: "carousel",
+        });
+      }
+
+      if (mobileElement) {
+        new bootstrap.Carousel(mobileElement, {
+          interval: 3000,
+          ride: "carousel",
+        });
+      }
     })
     .catch(function (error) {
       console.error("Error:", error);
