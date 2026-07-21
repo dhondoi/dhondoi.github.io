@@ -23,5 +23,11 @@ import { renderingProjects } from "./projects.js";
 
     renderingProjects();
     renderingBlogs();
+
+    // particle.js
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load("particles-js", "./assets/jsons/particle.json", function () {
+      console.log("callback - particles.js config loaded");
+    });
   });
 })();
