@@ -22,3 +22,31 @@ body {
   transition: all 0.3s ease;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
+
+/* Custom CSS untuk Efek Marquee */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee-loop 18s linear infinite;
+}
+
+/* Animasi pergerakan dari kanan ke kiri */
+@keyframes marquee-loop {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Berhenti sejenak saat kursor di-hover */
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
