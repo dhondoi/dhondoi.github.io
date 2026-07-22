@@ -25,7 +25,7 @@ body {
 }
 
 /* Custom CSS untuk Efek Marquee */
-.marquee-container {
+/* .marquee-container {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -34,10 +34,10 @@ body {
 .marquee-track {
   display: inline-flex;
   animation: marquee-loop 18s linear infinite;
-}
+} */
 
 /* Animasi pergerakan dari kanan ke kiri */
-@keyframes marquee-loop {
+/* @keyframes marquee-loop {
   0% {
     transform: translateX(0%);
   }
@@ -45,12 +45,12 @@ body {
   100% {
     transform: translateX(-50%);
   }
-}
+} */
 
 /* Berhenti sejenak saat kursor di-hover */
-.marquee-container:hover .marquee-track {
+/* .marquee-container:hover .marquee-track {
   animation-play-state: paused;
-}
+} */
 
 /* ---- reset particle.js ---- */
 
