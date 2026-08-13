@@ -110,12 +110,22 @@ body {
   overflow: hidden;
 }
 
-.hero-section{
+.hero-section {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%; /* Memastikan container di dalamnya tetap bisa menggunakan text-center */
+  width: 100%;
+  /* Memastikan container di dalamnya tetap bisa menggunakan text-center */
   z-index: 2;
 
+}
+
+#loading-modal {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
 }

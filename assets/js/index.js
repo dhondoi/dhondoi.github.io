@@ -14,6 +14,7 @@ import { renderingProjects } from "./projects.js";
 
   // Memuat semua seksi saat halaman dimuat
   document.addEventListener("DOMContentLoaded", async () => {
+    await loadSection("loading-modal", "loading-modal.html");
     await loadSection("navbar", "navbar.html");
     await loadSection("hero", "hero.html");
     await loadSection("about", "about.html");
@@ -26,8 +27,16 @@ import { renderingProjects } from "./projects.js";
 
     // particle.js
     /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-    particlesJS.load("particles-js", "./assets/jsons/particle.json", function () {
-      console.log("callback - particles.js config loaded");
-    });
+    particlesJS.load(
+      "particles-js",
+      "./assets/jsons/particle.json",
+      function () {
+        console.log("callback - particles.js config loaded");
+        document.getElementById("loading-modal").classList.add("loaded");
+        setTimeout(function () {
+          document.getElementById("loading-modal").remove();
+        }, 500);
+      },
+    );
   });
 })();
