@@ -19,8 +19,6 @@ import { renderingProjects } from "./projects.js";
   document.addEventListener("DOMContentLoaded", async () => {
     await loadSection("loading-modal", "loading-modal.html");
 
-    // Aktifkan pemblokiran
-    document.getElementById("loading-modal").classList.add("loaded");
     // Mencegah gerakan scroll
     window.addEventListener("wheel", disableScroll, { passive: false });
     window.addEventListener("touchmove", disableScroll, { passive: false });
@@ -42,6 +40,8 @@ import { renderingProjects } from "./projects.js";
       "./assets/jsons/particle.json",
       function () {
         console.log("callback - particles.js config loaded");
+        // Aktifkan pemblokiran
+        document.getElementById("loading-modal").classList.add("loaded");
         setTimeout(function () {
           document.getElementById("loading-modal").remove();
           window.removeEventListener("wheel", disableScroll);
