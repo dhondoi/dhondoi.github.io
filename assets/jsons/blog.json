@@ -1,5 +1,13 @@
 [
   {
+    "title": "Encryp Decrypt ID Tech In Laravel",
+    "link": "https://github.com/dhondoi/Laravel-12-Encrypt-Decrypt-ID",
+    "category": "Programming",
+    "desc": "mengganti id sebagai parameter menggunakan hash lebih baik daripada terlihat dengan telanjang id tersebut",
+    "badgeClass": "bg-warning",
+    "btnClass": "btn-outline-warning"
+  },
+  {
     "title": "Java Library Kriptografi",
     "link": "https://github.com/dhondoi/Java-Library-Kriptografi",
     "category": "Programming",
