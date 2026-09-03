@@ -14,15 +14,13 @@ import { renderingProjects } from "./projects.js";
   const disableScroll = (e) => {
     e.preventDefault();
   };
+  // Mencegah gerakan scroll
+  window.addEventListener("wheel", disableScroll, { passive: false });
+  window.addEventListener("touchmove", disableScroll, { passive: false });
 
   // Memuat semua seksi saat halaman dimuat
   document.addEventListener("DOMContentLoaded", async () => {
     await loadSection("loading-modal", "loading-modal.html");
-
-    // Mencegah gerakan scroll
-    window.addEventListener("wheel", disableScroll, { passive: false });
-    window.addEventListener("touchmove", disableScroll, { passive: false });
-
     await loadSection("navbar", "navbar.html");
     await loadSection("hero", "hero.html");
     await loadSection("about", "about.html");
@@ -33,6 +31,8 @@ import { renderingProjects } from "./projects.js";
     renderingProjects();
     renderingBlogs();
 
+    // Aktifkan pemblokiran
+    document.getElementById("loading-modal").classList.add("loaded");
     // particle.js
     /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
     particlesJS.load(
@@ -40,8 +40,6 @@ import { renderingProjects } from "./projects.js";
       "./assets/jsons/particle.json",
       function () {
         console.log("callback - particles.js config loaded");
-        // Aktifkan pemblokiran
-        document.getElementById("loading-modal").classList.add("loaded");
         setTimeout(function () {
           document.getElementById("loading-modal").remove();
           window.removeEventListener("wheel", disableScroll);
