@@ -4,13 +4,6 @@ import { renderingBlogs } from "./blogs.js";
 import { renderingProjects } from "./projects.js";
 
 (() => {
-  const disableScroll = (e) => {
-    e.preventDefault();
-  };
-  // Mencegah gerakan scroll
-  window.addEventListener("wheel", disableScroll, { passive: false });
-  window.addEventListener("touchmove", disableScroll, { passive: false });
-  
   const loadSection = async (id, file) => {
     await fetch(`sections/${file}`)
       .then((response) => response.text())
