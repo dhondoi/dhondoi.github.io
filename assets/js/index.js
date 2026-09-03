@@ -46,7 +46,7 @@ import { renderingProjects } from "./projects.js";
           document.getElementById("loading-modal").remove();
           window.removeEventListener("wheel", disableScroll);
           window.removeEventListener("touchmove", disableScroll);
-        }, 10000);
+        }, 500);
       },
     );
   });
