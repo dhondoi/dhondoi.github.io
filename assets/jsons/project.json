@@ -1,5 +1,11 @@
 [
   {
+    "title": "Aplikasi RW Pendataan Warga",
+    "link": "https://datarw17.dhondoi.online",
+    "image": "data-warga",
+    "desc": "Aplikasi RW yang digunakan untuk manajemen data warga."
+  },
+  {
     "title": "Aplikasi FrontEnd Management Contact UMKM",
     "link": "https://contactumkm.dhondoi.online",
     "image": "contact-umkm",

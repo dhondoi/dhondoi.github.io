@@ -11,10 +11,20 @@ import { renderingProjects } from "./projects.js";
         document.getElementById(id).innerHTML = data;
       });
   };
+  const disableScroll = (e) => {
+    e.preventDefault();
+  };
 
   // Memuat semua seksi saat halaman dimuat
   document.addEventListener("DOMContentLoaded", async () => {
     await loadSection("loading-modal", "loading-modal.html");
+
+    // Aktifkan pemblokiran
+    document.getElementById("loading-modal").classList.add("loaded");
+    // Mencegah gerakan scroll
+    window.addEventListener("wheel", disableScroll, { passive: false });
+    window.addEventListener("touchmove", disableScroll, { passive: false });
+
     await loadSection("navbar", "navbar.html");
     await loadSection("hero", "hero.html");
     await loadSection("about", "about.html");
@@ -32,10 +42,11 @@ import { renderingProjects } from "./projects.js";
       "./assets/jsons/particle.json",
       function () {
         console.log("callback - particles.js config loaded");
-        document.getElementById("loading-modal").classList.add("loaded");
         setTimeout(function () {
           document.getElementById("loading-modal").remove();
-        }, 500);
+          window.removeEventListener("wheel", disableScroll);
+          window.removeEventListener("touchmove", disableScroll);
+        }, 10000);
       },
     );
   });
