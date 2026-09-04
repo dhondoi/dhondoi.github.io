@@ -41,12 +41,15 @@ import { renderingProjects } from "./projects.js";
       "./assets/jsons/particle.json",
       function () {
         console.log("callback - particles.js config loaded");
-        setTimeout(function () {
-          document.getElementById("loading-modal").remove();
-          window.removeEventListener("wheel", disableScroll);
-          window.removeEventListener("touchmove", disableScroll);
-        }, 500);
       },
     );
+  });
+
+  window.addEventListener("load", () => {
+    setTimeout(function () {
+      document.getElementById("loading-modal").remove();
+      window.removeEventListener("wheel", disableScroll);
+      window.removeEventListener("touchmove", disableScroll);
+    }, 500);
   });
 })();
