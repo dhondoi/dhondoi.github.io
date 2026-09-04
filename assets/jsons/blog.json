@@ -1,5 +1,13 @@
 [
   {
+    "title": "Strategi Optimasi DB",
+    "link": "https://github.com/dhondoi/Laravel-12-DB-Otimization",
+    "category": "Programming",
+    "desc": "cara menghandle jutaan record database di laravel",
+    "badgeClass": "bg-success",
+    "btnClass": "btn-outline-success"
+  },
+  {
     "title": "Encryp Decrypt ID Tech In Laravel",
     "link": "https://github.com/dhondoi/Laravel-12-Encrypt-Decrypt-ID",
     "category": "Programming",
